@@ -48,6 +48,16 @@ const Navigation = () => {
     }
   };
 
+  const downloadResume = () => {
+    const resumeUrl = "https://drive.google.com/uc?export=download&id=1DbVZ8IeC4f8-ty6_gb6a7XYKYWhppuzr";
+    const link = document.createElement('a');
+    link.href = resumeUrl;
+    link.download = 'Shivam_Jayswal_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
       isScrolled 
@@ -90,9 +100,9 @@ const Navigation = () => {
             <Button
               variant="outline"
               className="glass-card hover:glow-primary transition-smooth"
-              onClick={() => scrollToSection("#contact")}
+              onClick={downloadResume}
             >
-              Let's Connect
+              My Resume
             </Button>
           </div>
 

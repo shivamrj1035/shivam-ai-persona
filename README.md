@@ -1,73 +1,68 @@
-# Welcome to your Lovable project
+# Shivam Jayswal - Portfolio Website
 
-## Project info
+A modern, responsive portfolio website showcasing my professional experience, projects, and skills as a Full-Stack Developer.
 
-**URL**: https://lovable.dev/projects/0a35430d-5909-46e5-b1f2-079113c80c34
+## 🚀 Live Demo
 
-## How can I edit this code?
+[View Portfolio](https://shivam-portfolio.vercel.app)
 
-There are several ways of editing your application.
+## 🛠️ Technologies Used
 
-**Use Lovable**
+- **Frontend**: React 18, TypeScript
+- **Styling**: Tailwind CSS, shadcn/ui components
+- **Build Tool**: Vite
+- **Icons**: Lucide React
+- **Deployment**: Vercel
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/0a35430d-5909-46e5-b1f2-079113c80c34) and start prompting.
+## 📋 Features
 
-Changes made via Lovable will be committed automatically to this repo.
+- Responsive design with dark theme
+- Interactive navigation with smooth scrolling
+- Professional experience timeline
+- Project showcase with live demos
+- Skills and technologies display
+- Resume download functionality
+- Contact form integration
 
-**Use your preferred IDE**
+## 🏃‍♂️ Getting Started
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Prerequisites
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- Node.js (v18 or higher)
+- npm or yarn
 
-Follow these steps:
+### Installation
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+1. Clone the repository:
+```bash
+git clone https://github.com/shivamrj1035/shivam-ai-persona.git
+```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+2. Navigate to the project directory:
+```bash
+cd shivam-ai-persona
+```
 
-# Step 3: Install the necessary dependencies.
-npm i
+3. Install dependencies:
+```bash
+npm install
+```
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+4. Start the development server:
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+5. Open [http://localhost:5173](http://localhost:5173) in your browser.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 📦 Build for Production
 
-**Use GitHub Codespaces**
+```bash
+npm run build
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 📧 Contact
 
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/0a35430d-5909-46e5-b1f2-079113c80c34) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+- **Email**: shivamrj1035@gmail.com
+- **LinkedIn**: [Shivam Jayswal](https://linkedin.com/in/shivamrj1035)
+- **GitHub**: [shivamrj1035](https://github.com/shivamrj1035)

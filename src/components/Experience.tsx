@@ -21,7 +21,7 @@ const Experience = () => {
       type: "Full-time",
       projects: [
         {
-          name: "Asset Performance Management (Adani Group)",
+          name: "Asset Performance Management",
           impact: "Optimized large-scale SQL queries and implemented advanced filtering for high-performance data analytics",
           technologies: ["Pandas", "Django", "Flower", "React.js", "Celery", "SQL Server", "Docker"],
           achievements: [
@@ -47,15 +47,15 @@ const Experience = () => {
     },
     {
       company: "Technman",
-      role: "Python Trainer & Intern",
+      role: "Python Intern",
       location: "India",
       duration: "Jul 2024 – Feb 2025",
       type: "Training & Development",
       projects: [
         {
           name: "Technical Training Programs",
-          impact: "Trained 100+ students in Python development and AI integration",
-          technologies: ["Python", "Django", "AI/ML", "GitHub", "Teaching"],
+          impact: "Python development and Docker AWS Learning",
+          technologies: ["Python", "Django", "AI/ML", "GitHub", "Docker", "AWS"],
           achievements: [
             "Delivered comprehensive Python development courses",
             "Taught Smart Development with AI integration",

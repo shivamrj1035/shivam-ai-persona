@@ -40,7 +40,7 @@ const About = () => {
               <CardContent className="p-6">
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
-                    <span className="text-2xl font-bold text-primary">3+</span>
+                    <span className="text-2xl font-bold text-primary">1+</span>
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg">Years Experience</h3>

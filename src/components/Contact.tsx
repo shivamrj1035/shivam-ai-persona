@@ -39,13 +39,13 @@ const Contact = () => {
     {
       icon: <Linkedin className="w-5 h-5" />,
       label: "LinkedIn",
-      href: "https://linkedin.com/in/shivam-jayswal",
+      href: "www.linkedin.com/in/shivam-jayswal-developer",
       color: "primary"
     },
     {
       icon: <Github className="w-5 h-5" />,
       label: "GitHub", 
-      href: "https://github.com/shivam-jayswal",
+      href: "https://github.com/shivamrj1035",
       color: "accent"
     }
   ];

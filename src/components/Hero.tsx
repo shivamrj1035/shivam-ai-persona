@@ -54,7 +54,7 @@ const Hero = () => {
               asChild
             >
               <a 
-                href="https://linkedin.com/in/shivam-jayswal" 
+                href="www.linkedin.com/in/shivam-jayswal-developer" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center gap-3"
@@ -71,7 +71,7 @@ const Hero = () => {
               asChild
             >
               <a 
-                href="https://github.com/shivam-jayswal" 
+                href="https://github.com/shivamrj1035" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center gap-3"

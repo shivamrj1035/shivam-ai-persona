@@ -20,7 +20,9 @@ const Projects = () => {
         "Next.js", "Convex DB", "Clerk Auth", "n8n Automation", "Gemini AI"
       ],
       highlight: "Featured Project",
-      gradient: "from-primary to-accent"
+      gradient: "from-primary to-accent",
+      codeUrl: "https://github.com/shivamrj1035/crack-it",
+      // liveUrl: "https://crack-it-demo.vercel.app"
     },
     {
       title: "Sangeet: Harmonizing Music Streaming",
@@ -36,7 +38,9 @@ const Projects = () => {
       technologies: [
         "Django", "MongoDB", "React", "RapidAPI", "Spotify API"
       ],
-      gradient: "from-accent to-primary"
+      gradient: "from-accent to-primary",
+      codeUrl: "https://github.com/shivamrj1035/sangeet",
+      // liveUrl: "https://sangeet-music.herokuapp.com"
     }
   ];
 
@@ -64,7 +68,7 @@ const Projects = () => {
               
               <CardHeader className="relative">
                 {project.highlight && (
-                  <Badge className="absolute -top-2 -right-2 bg-primary text-primary-foreground">
+                  <Badge className="absolute top-1 right-1 bg-primary text-primary-foreground">
                     {project.highlight}
                   </Badge>
                 )}
@@ -116,22 +120,30 @@ const Projects = () => {
 
                 {/* Action Buttons */}
                 <div className="flex gap-3 pt-2">
+                  { project.codeUrl &&
                   <Button 
                     variant="outline" 
                     size="sm"
                     className="glass-card hover:glow-primary transition-smooth flex-1"
+                    asChild
                   >
-                    <Github className="w-4 h-4 mr-2" />
-                    View Code
-                  </Button>
+                    <a href={project.codeUrl} target="_blank" rel="noopener noreferrer">
+                      <Github className="w-4 h-4 mr-2" />
+                      View Code
+                    </a>
+                  </Button>}
+                  { project.liveUrl &&
                   <Button 
                     variant="outline" 
                     size="sm"
                     className="glass-card hover:glow-accent transition-smooth flex-1"
+                    asChild
                   >
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                    Live Demo
-                  </Button>
+                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="w-4 h-4 mr-2" />
+                      Live Demo
+                    </a>
+                  </Button>}
                 </div>
               </CardContent>
             </Card>
@@ -156,7 +168,7 @@ const Projects = () => {
                 asChild
               >
                 <a 
-                  href="https://github.com/shivam-jayswal" 
+                  href="https://github.com/shivamrj1035/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="flex items-center gap-3"

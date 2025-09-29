@@ -145,7 +145,7 @@ const Training = () => {
         </div>
 
         {/* Training Impact */}
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
+        {/* <div className="grid md:grid-cols-3 gap-6 mb-12">
           {achievements.map((achievement, index) => (
             <Card 
               key={achievement.label}
@@ -171,7 +171,7 @@ const Training = () => {
               </CardContent>
             </Card>
           ))}
-        </div>
+        </div> */}
 
         {/* Training Philosophy */}
         <Card className="glass-card border-border/50 hover:glow-primary transition-smooth">
