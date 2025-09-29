@@ -162,22 +162,39 @@ const Contact = () => {
               </CardContent>
             </Card>
 
-            {/* Quick Contact Button */}
-            <div className="text-center">
+            {/* Quick Contact Buttons */}
+            <div className="space-y-4">
               <Button
                 size="lg"
-                className="hero-gradient text-white hover:opacity-90 transition-smooth glow-primary px-8 py-4 text-lg font-semibold"
+                className="w-full hero-gradient text-white hover:opacity-90 transition-smooth glow-primary px-8 py-4 text-lg font-semibold"
                 asChild
               >
                 <a
                   href="mailto:shivam.jayswal.1003@gmail.com?subject=Let's%20Collaborate&body=Hi%20Shivam,%0A%0AI'd%20like%20to%20discuss%20a%20potential%20collaboration.%0A%0ABest%20regards,"
-                  className="flex items-center gap-3"
+                  className="flex items-center justify-center gap-3"
                 >
                   <Send className="w-5 h-5" />
                   Send a Message
                 </a>
               </Button>
+              
+              <Button
+                size="lg"
+                className="w-full bg-green-600 hover:bg-green-700 text-white transition-smooth px-8 py-4 text-lg font-semibold"
+                asChild
+              >
+                <a
+                  href="https://wa.me/919054401780?text=Hi%20Shivam,%0A%0AI'd%20like%20to%20discuss%20a%20potential%20collaboration.%0A%0ABest%20regards,"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-3"
+                >
+                  <MessageCircle className="w-5 h-5" />
+                  Send a WhatsApp Message
+                </a>
+              </Button>
             </div>
+            
           </div>
         </div>
       </div>
