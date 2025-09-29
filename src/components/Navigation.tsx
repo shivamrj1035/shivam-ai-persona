@@ -144,9 +144,9 @@ const Navigation = () => {
                   <div className="pt-4 mt-6 border-t border-border/30">
                     <Button
                       className="w-full hero-gradient text-white hover:opacity-90 transition-smooth"
-                      onClick={() => scrollToSection("#contact")}
+                      onClick={downloadResume}
                     >
-                      Let's Connect
+                      My Resume
                     </Button>
                   </div>
                 </nav>
