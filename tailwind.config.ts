@@ -47,6 +47,11 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        // Custom portfolio colors
+        "surface-elevated": "hsl(var(--surface-elevated))",
+        "surface-glass": "hsl(var(--surface-glass))",
+        "glow-primary": "hsl(var(--glow-primary))",
+        "glow-accent": "hsl(var(--glow-accent))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
