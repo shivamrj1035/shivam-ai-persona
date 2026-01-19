@@ -1,71 +1,19 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { 
-  Building2, 
-  Calendar, 
-  MapPin, 
-  TrendingUp, 
+import {
+  Building2,
+  Calendar,
+  MapPin,
+  TrendingUp,
   Zap,
   Database,
   Code,
   Users
 } from "lucide-react";
+import { portfolioData } from "@/data/portfolio";
 
 const Experience = () => {
-  const experiences = [
-    {
-      company: "Cerebulb India Pvt. Ltd.",
-      role: "Jr. Fullstack Developer",
-      location: "GIFT, Gandhinagar, India",
-      duration: "Mar 2025 – Present",
-      type: "Full-time",
-      projects: [
-        {
-          name: "Asset Performance Management",
-          impact: "Optimized large-scale SQL queries and implemented advanced filtering for high-performance data analytics",
-          technologies: ["Pandas", "Django", "Flower", "React.js", "Celery", "SQL Server", "Docker"],
-          achievements: [
-            "Built REST APIs for aggregating large-scale equipment data",
-            "Implemented Celery with Django for background data-sync jobs",
-            "Customized Flower dashboard for monitoring distributed tasks",
-            "Collaborated with QA teams ensuring smooth production delivery"
-          ]
-        },
-        {
-          name: "Automation of Asset Metadata & Tag Creation",
-          impact: "Delivered 10x improvement in efficiency, eliminating repetitive manual work",
-          technologies: ["Python", "FastAPI", "Jinja2", "SQL Server"],
-          achievements: [
-            "Built end-to-end automation system in just one week",
-            "Leveraged AI tools and rapid prototyping skills",
-            "Generated PI SDK tags with metadata validation",
-            "Reduced manual effort and error rates significantly"
-          ]
-        }
-      ],
-      highlight: "Current Role"
-    },
-    {
-      company: "Technman",
-      role: "Python Intern",
-      location: "India",
-      duration: "Jul 2024 – Feb 2025",
-      type: "Training & Development",
-      projects: [
-        {
-          name: "Technical Training Programs",
-          impact: "Python development and Docker AWS Learning",
-          technologies: ["Python", "Django", "AI/ML", "GitHub", "Docker", "AWS"],
-          achievements: [
-            "Delivered comprehensive Python development courses",
-            "Taught Smart Development with AI integration",
-            "Mentored students in GitHub collaboration practices",
-            "Achieved 95% student satisfaction rating"
-          ]
-        }
-      ]
-    }
-  ];
+  const { experience: experiences } = portfolioData;
 
   return (
     <section id="experience" className="py-20 px-4 sm:px-6 lg:px-8">
@@ -87,21 +35,21 @@ const Experience = () => {
               {index !== experiences.length - 1 && (
                 <div className="absolute left-8 top-24 w-0.5 h-full bg-gradient-to-b from-primary to-accent opacity-30"></div>
               )}
-              
+
               <Card className="glass-card border-border/50 hover:glow-primary transition-smooth relative">
                 {exp.highlight && (
                   <Badge className="absolute -top-3 left-6 bg-primary text-primary-foreground z-10">
                     {exp.highlight}
                   </Badge>
                 )}
-                
+
                 <CardHeader>
                   <div className="flex items-start gap-6">
                     {/* Company Icon */}
                     <div className="w-16 h-16 rounded-2xl bg-primary/20 flex items-center justify-center flex-shrink-0">
                       <Building2 className="w-8 h-8 text-primary" />
                     </div>
-                    
+
                     {/* Company Info */}
                     <div className="flex-1">
                       <CardTitle className="text-2xl mb-2 text-gradient-primary">
@@ -148,7 +96,7 @@ const Experience = () => {
                         <h5 className="font-semibold text-accent mb-2 text-sm">Technologies Used:</h5>
                         <div className="flex flex-wrap gap-2 mb-4">
                           {project.technologies.map((tech) => (
-                            <Badge 
+                            <Badge
                               key={tech}
                               variant="outline"
                               className="bg-surface-elevated border-border/50 text-xs"
