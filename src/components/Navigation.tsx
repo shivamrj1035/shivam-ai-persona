@@ -11,9 +11,9 @@ const Navigation = () => {
     { label: "Home", href: "#hero" },
     { label: "About", href: "#about" },
     { label: "Skills", href: "#skills" },
+    { label: "Experience", href: "#experience" },
     { label: "Projects", href: "#projects" },
     { label: "Trainer", href: "#training" },
-    { label: "Experience", href: "#experience" },
     { label: "Contact", href: "#contact" },
   ];
 
@@ -60,8 +60,8 @@ const Navigation = () => {
 
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled
-        ? "bg-background/80 backdrop-blur-lg border-b border-border/30"
-        : "bg-transparent"
+      ? "bg-background/80 backdrop-blur-lg border-b border-border/30"
+      : "bg-transparent"
       }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
@@ -83,8 +83,8 @@ const Navigation = () => {
                   key={item.label}
                   onClick={() => scrollToSection(item.href)}
                   className={`px-3 py-2 rounded-md text-sm font-medium transition-smooth ${activeSection === item.href.slice(1)
-                      ? "text-primary bg-primary/10"
-                      : "text-muted-foreground hover:text-primary hover:bg-primary/5"
+                    ? "text-primary bg-primary/10"
+                    : "text-muted-foreground hover:text-primary hover:bg-primary/5"
                     }`}
                 >
                   {item.label}
@@ -130,8 +130,8 @@ const Navigation = () => {
                       key={item.label}
                       onClick={() => scrollToSection(item.href)}
                       className={`w-full text-left px-4 py-3 rounded-lg text-base font-medium transition-smooth ${activeSection === item.href.slice(1)
-                          ? "text-primary bg-primary/10 border border-primary/20"
-                          : "text-muted-foreground hover:text-primary hover:bg-primary/5"
+                        ? "text-primary bg-primary/10 border border-primary/20"
+                        : "text-muted-foreground hover:text-primary hover:bg-primary/5"
                         }`}
                     >
                       {item.label}
