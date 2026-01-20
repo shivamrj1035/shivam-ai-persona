@@ -9,7 +9,74 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Dark theme base colors */
+    /* Light theme base colors (Cool & Tech-focused) */
+    --background: 210 20% 98%;
+    --foreground: 222 47% 11%;
+
+    /* Card components */
+    --card: 210 20% 94%;
+    --card-foreground: 222 47% 11%;
+
+    /* Popover components */
+    --popover: 210 20% 98%;
+    --popover-foreground: 222 47% 11%;
+
+    /* Primary brand colors - Electric Blue */
+    --primary: 217 91% 60%;
+    --primary-foreground: 210 20% 98%;
+
+    /* Secondary colors */
+    --secondary: 210 20% 90%;
+    --secondary-foreground: 222 47% 11%;
+
+    /* Muted colors */
+    --muted: 210 20% 90%;
+    --muted-foreground: 215 25% 40%;
+
+    /* Accent colors - Emerald Tech */
+    --accent: 160 84% 39%;
+    --accent-foreground: 210 20% 98%;
+
+    /* Destructive colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 20% 98%;
+
+    /* Borders and inputs */
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 217 91% 60%;
+
+    /* Custom portfolio colors */
+    --hero-gradient-start: 217 91% 60%;
+    --hero-gradient-end: 160 84% 39%;
+    --glow-primary: 217 91% 60%;
+    --glow-accent: 160 84% 39%;
+    --surface-elevated: 210 10% 88%;
+    --surface-glass: 210 20% 98% / 0.8;
+
+    /* Animations and transitions */
+    --transition-smooth: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    /* Custom shadows */
+    --shadow-glow: 0 0 20px hsl(var(--glow-primary) / 0.2);
+    --shadow-accent-glow: 0 0 25px hsl(var(--glow-accent) / 0.3);
+    --shadow-elevated: 0 10px 40px -10px hsl(222 47% 5% / 0.1);
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  /* Dark theme overrides - Original Professional Design */
+  .dark {
     --background: 222 47% 5%;
     --foreground: 210 40% 98%;
 
@@ -55,7 +122,7 @@ All colors MUST be HSL.
     --surface-glass: 222 47% 8%;
 
     /* Animations and transitions */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     /* Custom shadows */
@@ -63,46 +130,6 @@ All colors MUST be HSL.
     --shadow-accent-glow: 0 0 25px hsl(var(--glow-accent) / 0.4);
     --shadow-elevated: 0 10px 40px -10px hsl(222 47% 5% / 0.8);
 
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  /* Dark mode variations - keeping same as root for consistency */
-  .dark {
-    --background: 222 47% 5%;
-    --foreground: 210 40% 98%;
-    --card: 222 47% 8%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222 47% 8%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 216 98% 52%;
-    --primary-foreground: 222 47% 5%;
-    --secondary: 217 32% 17%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217 32% 15%;
-    --muted-foreground: 215 20% 65%;
-    --accent: 178 77% 48%;
-    --accent-foreground: 222 47% 5%;
-    --destructive: 0 62% 50%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217 32% 17%;
-    --input: 217 32% 17%;
-    --ring: 216 98% 52%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -117,12 +144,17 @@ All colors MUST be HSL.
 @layer base {
   * {
     @apply border-border;
+    transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+      color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+      border-color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+      box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   html {
     overflow-x: hidden !important;
     width: 100%;
     position: relative;
+    scroll-behavior: smooth;
   }
 
   body {

@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import ThemeToggle from "./ThemeToggle";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -18,6 +19,14 @@ const Navigation = () => {
   ];
 
   useEffect(() => {
+    // Initialize theme from localStorage (Default to dark)
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "light") {
+      document.documentElement.classList.remove("dark");
+    } else {
+      document.documentElement.classList.add("dark");
+    }
+
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
 
@@ -93,8 +102,9 @@ const Navigation = () => {
             </div>
           </div>
 
-          {/* CTA Button - Desktop */}
-          <div className="hidden md:block">
+          {/* Desktop Navigation & Theme Toggle */}
+          <div className="hidden md:flex items-center space-x-4">
+            <ThemeToggle />
             <Button
               variant="outline"
               className="glass-card hover:glow-primary transition-smooth"
@@ -120,8 +130,9 @@ const Navigation = () => {
               <SheetContent side="right" className="w-80 bg-background/95 backdrop-blur-lg">
                 <div className="flex items-center justify-between mb-8 mt-4">
                   <span className="text-2xl font-bold text-gradient-primary">
-                    Shivam Jayswal
+                    SJ Portfolio
                   </span>
+                  <ThemeToggle />
                 </div>
 
                 <nav className="space-y-4">
