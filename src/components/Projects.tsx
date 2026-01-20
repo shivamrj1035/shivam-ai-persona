@@ -34,95 +34,101 @@ const Projects = () => {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
-            <motion.div
-              key={project.title}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
-              viewport={{ once: true }}
-            >
-              <Card
-                className="glass-card border-border/50 hover:glow-primary transition-smooth group relative overflow-hidden h-full flex flex-col"
+          {projects.map((project, index) => {
+            const isLast = index === projects.length - 1;
+            const isOddCount = projects.length % 2 !== 0;
+
+            return (
+              <motion.div
+                key={project.title}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.2 }}
+                viewport={{ once: true }}
+                className={`${isLast && isOddCount ? "lg:col-span-2" : ""}`}
               >
-                {/* Gradient Background */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-5 group-hover:opacity-10 transition-smooth`}></div>
+                <Card
+                  className="glass-card border-border/50 hover:glow-primary transition-smooth group relative overflow-hidden h-full flex flex-col"
+                >
+                  {/* Gradient Background */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-5 group-hover:opacity-10 transition-smooth`}></div>
 
-                <CardHeader className="relative">
-                  {project.highlight && (
-                    <Badge className="absolute top-1 right-1 bg-primary text-primary-foreground">
-                      {project.highlight}
-                    </Badge>
-                  )}
+                  <CardHeader className="relative">
+                    {project.highlight && (
+                      <Badge className="absolute top-1 right-1 bg-primary text-primary-foreground">
+                        {project.highlight}
+                      </Badge>
+                    )}
 
-                  <div className="flex items-start gap-4">
-                    <div className="p-3 rounded-xl bg-surface-elevated">
-                      <project.icon className="w-8 h-8 text-primary" />
+                    <div className="flex items-start gap-4">
+                      <div className="p-3 rounded-xl bg-surface-elevated">
+                        <project.icon className="w-8 h-8 text-primary" />
+                      </div>
+                      <div className="flex-1">
+                        <CardTitle className="text-xl mb-3 group-hover:text-gradient-primary transition-smooth">
+                          {project.title}
+                        </CardTitle>
+                        <p className="text-muted-foreground leading-relaxed">
+                          {project.description}
+                        </p>
+                      </div>
                     </div>
+                  </CardHeader>
+
+                  <CardContent className="relative space-y-6 flex-1 flex flex-col">
+                    {/* Key Features */}
                     <div className="flex-1">
-                      <CardTitle className="text-xl mb-3 group-hover:text-gradient-primary transition-smooth">
-                        {project.title}
-                      </CardTitle>
-                      <p className="text-muted-foreground leading-relaxed">
-                        {project.description}
-                      </p>
+                      <h4 className="font-semibold mb-3 text-sm text-accent">Key Features:</h4>
+                      <ul className="space-y-2">
+                        {project.features.map((feature, i) => (
+                          <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
+                            <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></span>
+                            {feature}
+                          </li>
+                        ))}
+                      </ul>
                     </div>
-                  </div>
-                </CardHeader>
 
-                <CardContent className="relative space-y-6 flex-1 flex flex-col">
-                  {/* Key Features */}
-                  <div className="flex-1">
-                    <h4 className="font-semibold mb-3 text-sm text-accent">Key Features:</h4>
-                    <ul className="space-y-2">
-                      {project.features.map((feature, i) => (
-                        <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
-                          <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></span>
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Tech Stack */}
-                  <div>
-                    <h4 className="font-semibold mb-3 text-sm text-accent">Tech Stack:</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {project.technologies.map((tech) => (
-                        <Badge
-                          key={tech}
-                          variant="outline"
-                          className="bg-surface-elevated border-border/50 text-xs"
-                        >
-                          {tech}
-                        </Badge>
-                      ))}
+                    {/* Tech Stack */}
+                    <div>
+                      <h4 className="font-semibold mb-3 text-sm text-accent">Tech Stack:</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {project.technologies.map((tech) => (
+                          <Badge
+                            key={tech}
+                            variant="outline"
+                            className="bg-surface-elevated border-border/50 text-xs"
+                          >
+                            {tech}
+                          </Badge>
+                        ))}
+                      </div>
                     </div>
-                  </div>
 
-                  {/* Actions */}
-                  <div className="flex gap-4 pt-4 mt-auto">
-                    {project.codeUrl && (
-                      <Button variant="outline" size="sm" className="flex-1 gap-2" asChild>
-                        <a href={project.codeUrl} target="_blank" rel="noopener noreferrer">
-                          <Github className="w-4 h-4" />
-                          View Code
-                        </a>
-                      </Button>
-                    )}
-                    {project.liveUrl && (
-                      <Button size="sm" className="flex-1 gap-2" asChild>
-                        <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                          <ExternalLink className="w-4 h-4" />
-                          Live Demo
-                        </a>
-                      </Button>
-                    )}
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
+                    {/* Actions */}
+                    <div className="flex gap-4 pt-4 mt-auto">
+                      {project.codeUrl && (
+                        <Button variant="outline" size="sm" className="flex-1 gap-2" asChild>
+                          <a href={project.codeUrl} target="_blank" rel="noopener noreferrer">
+                            <Github className="w-4 h-4" />
+                            View Code
+                          </a>
+                        </Button>
+                      )}
+                      {project.liveUrl && (
+                        <Button size="sm" className="flex-1 gap-2" asChild>
+                          <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                            <ExternalLink className="w-4 h-4" />
+                            Live Demo
+                          </a>
+                        </Button>
+                      )}
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            );
+          })}
         </div>
 
         <div className="mt-12 text-center">
