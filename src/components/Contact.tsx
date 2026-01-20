@@ -185,7 +185,7 @@ const Contact = () => {
                   className="flex items-center justify-center gap-3"
                 >
                   <Send className="w-5 h-5" />
-                  Send a Message
+                  Send a Mail
                 </a>
               </Button>
 

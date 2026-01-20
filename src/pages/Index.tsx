@@ -10,7 +10,7 @@ import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <Navigation />
       <main>
         <section id="hero">
@@ -18,9 +18,9 @@ const Index = () => {
         </section>
         <About />
         <Skills />
+        <Experience />
         <Projects />
         <Training />
-        <Experience />
         <Contact />
       </main>
       <Footer />

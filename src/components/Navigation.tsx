@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import ThemeToggle from "./ThemeToggle";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -11,13 +12,21 @@ const Navigation = () => {
     { label: "Home", href: "#hero" },
     { label: "About", href: "#about" },
     { label: "Skills", href: "#skills" },
+    { label: "Experience", href: "#experience" },
     { label: "Projects", href: "#projects" },
     { label: "Trainer", href: "#training" },
-    { label: "Experience", href: "#experience" },
     { label: "Contact", href: "#contact" },
   ];
 
   useEffect(() => {
+    // Initialize theme from localStorage (Default to dark)
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "light") {
+      document.documentElement.classList.remove("dark");
+    } else {
+      document.documentElement.classList.add("dark");
+    }
+
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
 
@@ -60,8 +69,8 @@ const Navigation = () => {
 
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled
-        ? "bg-background/80 backdrop-blur-lg border-b border-border/30"
-        : "bg-transparent"
+      ? "bg-background/80 backdrop-blur-lg border-b border-border/30"
+      : "bg-transparent"
       }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
@@ -83,8 +92,8 @@ const Navigation = () => {
                   key={item.label}
                   onClick={() => scrollToSection(item.href)}
                   className={`px-3 py-2 rounded-md text-sm font-medium transition-smooth ${activeSection === item.href.slice(1)
-                      ? "text-primary bg-primary/10"
-                      : "text-muted-foreground hover:text-primary hover:bg-primary/5"
+                    ? "text-primary bg-primary/10"
+                    : "text-muted-foreground hover:text-primary hover:bg-primary/5"
                     }`}
                 >
                   {item.label}
@@ -93,8 +102,9 @@ const Navigation = () => {
             </div>
           </div>
 
-          {/* CTA Button - Desktop */}
-          <div className="hidden md:block">
+          {/* Desktop Navigation & Theme Toggle */}
+          <div className="hidden md:flex items-center space-x-4">
+            <ThemeToggle />
             <Button
               variant="outline"
               className="glass-card hover:glow-primary transition-smooth"
@@ -120,8 +130,9 @@ const Navigation = () => {
               <SheetContent side="right" className="w-80 bg-background/95 backdrop-blur-lg">
                 <div className="flex items-center justify-between mb-8 mt-4">
                   <span className="text-2xl font-bold text-gradient-primary">
-                    Shivam Jayswal
+                    SJ Portfolio
                   </span>
+                  <ThemeToggle />
                 </div>
 
                 <nav className="space-y-4">
@@ -130,8 +141,8 @@ const Navigation = () => {
                       key={item.label}
                       onClick={() => scrollToSection(item.href)}
                       className={`w-full text-left px-4 py-3 rounded-lg text-base font-medium transition-smooth ${activeSection === item.href.slice(1)
-                          ? "text-primary bg-primary/10 border border-primary/20"
-                          : "text-muted-foreground hover:text-primary hover:bg-primary/5"
+                        ? "text-primary bg-primary/10 border border-primary/20"
+                        : "text-muted-foreground hover:text-primary hover:bg-primary/5"
                         }`}
                     >
                       {item.label}

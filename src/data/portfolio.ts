@@ -1,3 +1,4 @@
+import { IndianRupee } from "lucide-react";
 import {
     Github,
     Linkedin,
@@ -8,6 +9,7 @@ import {
     Database,
     Globe,
     Brain,
+    ReceiptIndianRupee,
     Server,
     Wrench,
     Building2,
@@ -193,6 +195,7 @@ export const portfolioData: {
             technologies: ["Next.js", "Convex DB", "Clerk Auth", "n8n Automation", "Gemini AI"],
             highlight: "Featured Project",
             gradient: "from-primary to-accent",
+            liveUrl: "https://crack-it-eight.vercel.app/dashboard",
             codeUrl: "https://github.com/shivamrj1035/crack-it"
         },
         {
@@ -209,6 +212,36 @@ export const portfolioData: {
             technologies: ["Django", "MongoDB", "React", "RapidAPI", "Spotify API"],
             gradient: "from-accent to-primary",
             codeUrl: "https://github.com/shivamrj1035/sangeet"
+        },
+        {
+            title: "Property Purchase Management System",
+            description: "Web application to simplify and track your home buying financial journey with funding sources, EMI tracking, expense management, and reports.",
+            icon: ReceiptIndianRupee,
+            features: [
+                "Track multiple funding sources including loans and personal contributions",
+                "Automated EMI tracking with reminders for upcoming payments",
+                "Comprehensive analytics and financial reports",
+                "Expense management for builder payments and fees",
+                "Detailed interest breakdown and exportable CSV/PDF reports"
+            ],
+            technologies: [
+                "Next.js 14",
+                "TypeScript",
+                "Tailwind CSS",
+                "shadcn/ui",
+                "Zustand",
+                "Recharts",
+                "TanStack Table",
+                "Framer Motion",
+                "FastAPI",
+                "JWT Authentication",
+                "Cloud Firestore",
+                "SendGrid",
+                "APScheduler"
+            ],
+            gradient: "from-accent to-primary",
+            liveUrl: "https://purchase-management-webapp.vercel.app/",
+            codeUrl: "https://github.com/shivamrj1035/purchase-management-webapp"
         }
     ],
     training: [
